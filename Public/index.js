@@ -1,6 +1,9 @@
 const socket = io();
 
 const username = prompt("Enter username");
+
+if (username === "" || username === null) location.reload();
+
 const input = document.querySelector(".input");
 const button = document.querySelector(".button");
 const display = document.querySelector(".display_box");
