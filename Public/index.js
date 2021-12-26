@@ -24,6 +24,7 @@ socket.on("input_message", function (data) {
     ? li.setAttribute("class", "text_first")
     : li.setAttribute("class", "text_second");
   ul.appendChild(li);
+  displayBottom();
 });
 
 socket.on("user_joined", function ({ name }) {
@@ -31,6 +32,7 @@ socket.on("user_joined", function ({ name }) {
   li.textContent = `${name} has joined chat`;
   li.setAttribute("class", "user_joined");
   ul.appendChild(li);
+  displayBottom();
 });
 
 socket.on("user_left", function ({ name }) {
@@ -38,7 +40,12 @@ socket.on("user_left", function ({ name }) {
   li.textContent = `${name} has left chat`;
   li.setAttribute("class", "user_left");
   ul.appendChild(li);
+  displayBottom();
 });
 
 socket.emit("user_joined", username);
 socket.emit("user_left", username);
+
+function displayBottom() {
+  display.scrollTo(0, display.scrollHeight);
+}
