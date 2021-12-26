@@ -12,7 +12,6 @@ button.addEventListener("click", () => {
     input.value = "";
   }
 });
-
 let flag = true;
 
 socket.on("input_message", function (data) {
