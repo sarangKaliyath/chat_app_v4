@@ -1,0 +1,35 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  border: 1px solid red;
+  height: 99.7vh;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 50%;
+  height: 70%;
+  flex-direction: column;
+}
+.container,
+/* .display_box, */
+.input_box {
+  border: 1px solid black;
+}
+
+.list {
+  list-style: none;
+}
+
+body,
+.container,
+.input_box {
+  display: flex;
+}
+.display_box {
+  height: 90%;
+  overflow-y: scroll;
+}
+.input_box {
+  height: 10%;
+}
